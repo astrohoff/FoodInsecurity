@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VR;
 
 public class PlayerController : MonoBehaviour {
     public float moveSpeed = 1f;
@@ -49,5 +50,12 @@ public class PlayerController : MonoBehaviour {
         // Rotation.
         float rotation = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x * rotateSpeed * deltaTime;
         transform.RotateAround(Camera.main.transform.position, Vector3.up, rotation);
+    }
+
+    private void GetMoveForwardInput(){
+        if (VRDevice.isPresent)
+        {
+            
+        }
     }
 }
