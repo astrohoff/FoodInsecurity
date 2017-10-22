@@ -1,21 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VR;
 
-public class PlayerController : MonoBehaviour {
+public class Player : MonoBehaviour {
+    public Transform playerHead;
     public float moveSpeed = 1f;
     public float rotateSpeed = 1f;
+    public float maxHealth = 10;
+    public float minHealth = 1;
+    // Movement cost in health points per meter.
+    public float movementCost = 0.5f;
 
     private CharacterController charCtrl;
+    private float currentHealth;
+    private Vector3 previousPosition;
+
 	// Use this for initialization
 	void Start () {
         charCtrl = GetComponent<CharacterController>();
+        currentHealth = maxHealth;
+        previousPosition = playerHead.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        ApplyMovementCost();
 	}
+
+    void ApplyMovementCost(){
+        // Reduce health based on amount of movement.
+        float distanceMoved = (playerHead.position - previousPosition).magnitude;
+        // Ignore any jumps.
+        if(distanceMoved < 0.5f){
+            ChangeHealth(-movementCost * distanceMoved);
+        }
+        previousPosition = playerHead.position;
+    }
 
     void FixedUpdate()
     {
@@ -45,17 +65,16 @@ public class PlayerController : MonoBehaviour {
         right.Normalize();
         float forwardMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y * moveSpeed * deltaTime;
         float sideMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x * moveSpeed * deltaTime;
-        charCtrl.SimpleMove(forward * forwardMovement + right * sideMovement);
+        Vector3 finalMovement = (forward * forwardMovement + right * sideMovement) * (currentHealth / maxHealth);
+        charCtrl.SimpleMove(finalMovement);
 
         // Rotation.
         float rotation = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x * rotateSpeed * deltaTime;
         transform.RotateAround(Camera.main.transform.position, Vector3.up, rotation);
     }
 
-    private void GetMoveForwardInput(){
-        if (VRDevice.isPresent)
-        {
-            
-        }
+    public void ChangeHealth(float deltaHealth){
+        currentHealth += deltaHealth;
+        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
     }
 }
