@@ -14,9 +14,11 @@ public class Player : MonoBehaviour {
     private CharacterController charCtrl;
     private float currentHealth;
     private Vector3 previousPosition;
+    private List<GameObject> collidingObjects;
 
 	// Use this for initialization
 	void Start () {
+        collidingObjects = new List<GameObject>();
         charCtrl = GetComponent<CharacterController>();
         currentHealth = maxHealth;
         previousPosition = playerHead.position;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ApplyMovementCost();
+        CenterColliderOnPlayerHead();
 	}
 
     void ApplyMovementCost(){
@@ -76,5 +79,21 @@ public class Player : MonoBehaviour {
     public void ChangeHealth(float deltaHealth){
         currentHealth += deltaHealth;
         currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+    }
+
+    public void CenterColliderOnPlayerHead(){
+        if(collidingObjects.Count == 0){
+            charCtrl.center = new Vector3(playerHead.localPosition.x, charCtrl.center.y, playerHead.localPosition.z);
+        }
+    }
+
+    void OnCollisionEnter(Collision c){
+        if(c.gameObject.tag != "Ground"){
+            collidingObjects.Add(c.gameObject);
+        }
+    }
+
+    void OnCollisionExit(Collision c){
+        collidingObjects.Remove(c.gameObject);
     }
 }
