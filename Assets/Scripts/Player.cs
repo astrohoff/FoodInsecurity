@@ -10,15 +10,14 @@ public class Player : MonoBehaviour {
     public float minHealth = 1;
     // Movement cost in health points per meter.
     public float movementCost = 0.5f;
+    public float colliderAlignmentThresh = 0.1f;
 
     private CharacterController charCtrl;
     private float currentHealth;
     private Vector3 previousPosition;
-    private List<GameObject> collidingObjects;
 
 	// Use this for initialization
 	void Start () {
-        collidingObjects = new List<GameObject>();
         charCtrl = GetComponent<CharacterController>();
         currentHealth = maxHealth;
         previousPosition = playerHead.position;
@@ -82,18 +81,10 @@ public class Player : MonoBehaviour {
     }
 
     public void CenterColliderOnPlayerHead(){
-        if(collidingObjects.Count == 0){
+        Vector3 playerXZ = new Vector3(playerHead.localPosition.x, 0, playerHead.localPosition.z);
+        Vector3 colliderXZ = new Vector3(charCtrl.center.x, 0, charCtrl.center.z);
+        if((colliderXZ - playerXZ).magnitude > 0.1f){
             charCtrl.center = new Vector3(playerHead.localPosition.x, charCtrl.center.y, playerHead.localPosition.z);
         }
-    }
-
-    void OnCollisionEnter(Collision c){
-        if(c.gameObject.tag != "Ground"){
-            collidingObjects.Add(c.gameObject);
-        }
-    }
-
-    void OnCollisionExit(Collision c){
-        collidingObjects.Remove(c.gameObject);
     }
 }
