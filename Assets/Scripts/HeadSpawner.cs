@@ -4,20 +4,22 @@ using UnityEngine;
 using UnityEngine.VR;
 
 public class HeadSpawner : MonoBehaviour {
-    public GameObject nonVRHeadPrefab, VRHeadPrefab;
-    public Transform headPosition;
+    public GameObject nonVrHeadPrefab, vrHeadPrefab;
+    public Transform vrSpawnPosition, nonVrSpawnPosition;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        GameObject head;
         if (UnityEngine.XR.XRDevice.isPresent)
         {
-            GameObject head = Instantiate(VRHeadPrefab, transform);
-            head.transform.position = headPosition.position;
+            head = Instantiate(vrHeadPrefab, transform);
+            head.transform.position = vrSpawnPosition.position;
         }
         else
         {
-            GameObject head = Instantiate(nonVRHeadPrefab, transform);
-            head.transform.position = headPosition.position;
+            head = Instantiate(nonVrHeadPrefab, transform);
+            head.transform.position = nonVrSpawnPosition.position;
         }
+        GetComponent<Player>().playerHead = head.transform;
 	}
 }
