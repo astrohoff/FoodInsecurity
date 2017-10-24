@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.XR;
 
 public class Player : MonoBehaviour {
+    private const float VrFramerate = 90;
+
     public Transform playerHead;
     public float moveSpeed = 1f;
     public float rotateSpeed = 1f;
@@ -14,6 +16,9 @@ public class Player : MonoBehaviour {
     public float minHealth = 1;
     // Movement cost in health points per meter.
     public float movementCost = 0.5f;
+    public float colliderAlignmentThresh = 0.1f;
+    public float nonVrGraphicsFramerate = 60;
+    public float nonVRPhysicsFramerate = 60;
 
     private CharacterController charCtrl;
     private float currentHealth;
@@ -22,6 +27,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        SetTargetFramerates();
         charCtrl = GetComponent<CharacterController>();
         currentHealth = maxHealth;
         previousPosition = playerHead.position;
@@ -30,7 +36,24 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ApplyMovementCost();
+        if (XRDevice.isPresent)
+        {
+            CenterColliderOnPlayerHead();
+        }
 	}
+
+    void SetTargetFramerates(){
+        if (XRDevice.isPresent)
+        {
+            Application.targetFrameRate = (int)VrFramerate;
+            Time.fixedDeltaTime = 1 / VrFramerate;
+        }
+        else
+        {
+            Application.targetFrameRate = (int)nonVrGraphicsFramerate;
+            Time.fixedDeltaTime = 1 / nonVRPhysicsFramerate;
+        }
+    }
 
     void ApplyMovementCost(){
         // Reduce health based on amount of movement.
@@ -92,7 +115,7 @@ public class Player : MonoBehaviour {
 
         Vector3 constrainedAngles = playerHead.localEulerAngles;
         constrainedAngles.z = 0;
-        constrainedAngles.x = Mathf.Clamp(constrainedAngles.x, mouseLookMinPitchAngle, mouseLookMaxPitchAngle);
+        //constrainedAngles.x = Mathf.Clamp(constrainedAngles.x, mouseLookMinPitchAngle, mouseLookMaxPitchAngle);
         playerHead.localEulerAngles = constrainedAngles;
     }
 
@@ -132,5 +155,13 @@ public class Player : MonoBehaviour {
     public void ChangeHealth(float deltaHealth){
         currentHealth += deltaHealth;
         currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+    }
+
+    public void CenterColliderOnPlayerHead(){
+        Vector3 playerXZ = new Vector3(playerHead.localPosition.x, 0, playerHead.localPosition.z);
+        Vector3 colliderXZ = new Vector3(charCtrl.center.x, 0, charCtrl.center.z);
+        if((colliderXZ - playerXZ).magnitude > 0.1f){
+            charCtrl.center = new Vector3(playerHead.localPosition.x, charCtrl.center.y, playerHead.localPosition.z);
+        }
     }
 }
