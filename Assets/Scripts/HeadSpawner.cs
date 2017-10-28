@@ -6,6 +6,7 @@ using UnityEngine.VR;
 public class HeadSpawner : MonoBehaviour {
     public GameObject nonVrHeadPrefab, vrHeadPrefab;
     public Transform vrSpawnPosition, nonVrSpawnPosition;
+    public Transform healthBar;
 
 	// Use this for initialization
 	void Awake () {
@@ -21,5 +22,6 @@ public class HeadSpawner : MonoBehaviour {
             head.transform.position = nonVrSpawnPosition.position;
         }
         GetComponent<Player>().playerHead = head.transform;
+        healthBar.parent = head.transform;
 	}
 }

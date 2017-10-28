@@ -7,21 +7,29 @@ public class Player : MonoBehaviour {
     private const float VrFramerate = 90;
 
     public Transform playerHead;
+    // Movement variables.
     public float moveSpeed = 1f;
     public float rotateSpeed = 1f;
     public float mouseLookSpeed = 1f;
     public float mouseLookMinPitchAngle = -70;
     public float mouseLookMaxPitchAngle = 70;
-    public float maxHealth = 10;
-    public float minHealth = 1;
-    // Movement cost in health points per meter.
-    public float movementCost = 0.5f;
-    public float colliderAlignmentThresh = 0.1f;
-    public float nonVrGraphicsFramerate = 60;
-    public float nonVRPhysicsFramerate = 60;
 
+    public float normalizedEnergy = 1;
+    public float exertionMaxSpeed = 2;
+    public float energyDepletionSpeed = 0.1f;
+    public float energyRegenSpeed = 0.06f;
+    public float maxRegenEnergy = 0.5f;
+    public float maxHealth = 10f;
+    public HealthBar healthBar;
+    // Movement cost in health points per meter.
+    //public float movementCost = 0.5f;
+    // Distance that the player collider must be from the player head before it recenters itself (for VR).
+    public float colliderAlignmentThresh = 0.1f;
+
+    private float nonVrGraphicsFramerate = 60;
+    private float nonVRPhysicsFramerate = 60;
     private CharacterController charCtrl;
-    private float currentHealth;
+    //private float currentHealth;
     private Vector3 previousPosition;
     private float mouseLookYaw, mouseLookPitch;
 
@@ -29,17 +37,20 @@ public class Player : MonoBehaviour {
 	void Start () {
         SetTargetFramerates();
         charCtrl = GetComponent<CharacterController>();
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         previousPosition = playerHead.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        ApplyMovementCost();
+        //ApplyMovementCost();
+        UpdateEnegery();
         if (XRDevice.isPresent)
         {
             CenterColliderOnPlayerHead();
         }
+        previousPosition = playerHead.position;
+        healthBar.SetNormalizedHealth(normalizedEnergy);
 	}
 
     void SetTargetFramerates(){
@@ -55,15 +66,14 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void ApplyMovementCost(){
+    /*void ApplyMovementCost(){
         // Reduce health based on amount of movement.
         float distanceMoved = (playerHead.position - previousPosition).magnitude;
         // Ignore any jumps.
         if(distanceMoved < 0.5f){
             ChangeHealth(-movementCost * distanceMoved);
         }
-        previousPosition = playerHead.position;
-    }
+    }*/
 
     void FixedUpdate()
     {
@@ -85,7 +95,7 @@ public class Player : MonoBehaviour {
         right.Normalize();
         float forwardMovement = GetForwardMovementInput() * moveSpeed * deltaTime;
         float sideMovement = GetSideMovementInput() * moveSpeed * deltaTime;
-        Vector3 finalMovement = (forward * forwardMovement + right * sideMovement) * (currentHealth / maxHealth);
+        Vector3 finalMovement = (forward * forwardMovement + right * sideMovement) * normalizedEnergy;
         charCtrl.SimpleMove(finalMovement);
 
         // Rotation.
@@ -153,8 +163,10 @@ public class Player : MonoBehaviour {
     }
 
     public void ChangeHealth(float deltaHealth){
-        currentHealth += deltaHealth;
-        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+        //currentHealth += (deltaHealth;
+        //currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+        normalizedEnergy += deltaHealth / maxHealth;
+        normalizedEnergy = Mathf.Clamp01(normalizedEnergy);
     }
 
     public void CenterColliderOnPlayerHead(){
@@ -163,5 +175,41 @@ public class Player : MonoBehaviour {
         if((colliderXZ - playerXZ).magnitude > 0.1f){
             charCtrl.center = new Vector3(playerHead.localPosition.x, charCtrl.center.y, playerHead.localPosition.z);
         }
+    }
+
+    public float GetNormalizedExertion(){
+        float distanceMoved = (playerHead.position - previousPosition).magnitude;
+        // Ignore any jumps.
+        if(distanceMoved > 0.5f){
+            distanceMoved = 0;
+        }
+        float playerSpeed = distanceMoved / Time.deltaTime;
+        float movementExertion = Mathf.Clamp01(playerSpeed / exertionMaxSpeed);
+
+        if (Time.frameCount % 60 == 0)
+        {
+            Debug.Log("Exertion: " + movementExertion);
+        }
+
+        return movementExertion;        
+    }
+
+    public void UpdateEnegery(){
+        float exertion = GetNormalizedExertion();
+        float depletion = exertion * energyDepletionSpeed * Time.deltaTime;
+        float regen = (1 - exertion) * energyRegenSpeed * Time.deltaTime;
+        if (normalizedEnergy < maxRegenEnergy)
+        {
+            if ((normalizedEnergy + regen) > maxRegenEnergy)
+            {
+                normalizedEnergy = maxRegenEnergy;
+            }
+            else
+            {
+                normalizedEnergy += regen;
+            }
+        }
+        normalizedEnergy -= depletion;
+        normalizedEnergy = Mathf.Clamp01(normalizedEnergy);
     }
 }
