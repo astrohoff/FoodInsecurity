@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityStandardAssets.ImageEffects;
 
 public class Player : MonoBehaviour {
     private const float VrFramerate = 90;
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour {
     //public float movementCost = 0.5f;
     // Distance that the player collider must be from the player head before it recenters itself (for VR).
     public float colliderAlignmentThresh = 0.1f;
+    public BlurOptimized blur;
+    public float blurEnergyStart = 0.5f;
+    public float maxBlur = 4;
 
     private float nonVrGraphicsFramerate = 60;
     private float nonVRPhysicsFramerate = 60;
@@ -51,6 +55,7 @@ public class Player : MonoBehaviour {
         }
         previousPosition = playerHead.position;
         healthBar.SetNormalizedHealth(normalizedEnergy);
+        UpdateBlur();
 	}
 
     void SetTargetFramerates(){
@@ -211,5 +216,19 @@ public class Player : MonoBehaviour {
         }
         normalizedEnergy -= depletion;
         normalizedEnergy = Mathf.Clamp01(normalizedEnergy);
+    }
+
+    public void UpdateBlur(){
+        if (normalizedEnergy < blurEnergyStart)
+        {
+            float blurSize = (1 - normalizedEnergy / blurEnergyStart) * maxBlur;
+            blur.blurSize = blurSize;
+            blur.blurIterations = 2;
+        }
+        else
+        {
+            blur.blurSize = 0;
+            blur.blurIterations = 1;
+        }
     }
 }

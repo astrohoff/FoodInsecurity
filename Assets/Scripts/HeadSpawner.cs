@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VR;
+using UnityStandardAssets.ImageEffects;
 
 public class HeadSpawner : MonoBehaviour {
     public GameObject nonVrHeadPrefab, vrHeadPrefab;
@@ -21,7 +22,8 @@ public class HeadSpawner : MonoBehaviour {
             head = Instantiate(nonVrHeadPrefab, transform);
             head.transform.position = nonVrSpawnPosition.position;
         }
-        GetComponent<Player>().playerHead = head.transform;
+        GetComponent<Player>().playerHead = Camera.main.transform;
         healthBar.parent = head.transform;
+        GetComponent<Player>().blur = Camera.main.GetComponent<BlurOptimized>();
 	}
 }
