@@ -23,7 +23,10 @@ public class HeadSpawner : MonoBehaviour {
             head.transform.position = nonVrSpawnPosition.position;
         }
         GetComponent<Player>().playerHead = Camera.main.transform;
-        healthBar.parent = head.transform;
+        healthBar.parent = Camera.main.transform;
+        Vector3 adjustedPos = healthBar.localPosition;
+        adjustedPos.y = 0.5f;
+        healthBar.localPosition = adjustedPos;
         GetComponent<Player>().blur = Camera.main.GetComponent<BlurOptimized>();
 	}
 }
