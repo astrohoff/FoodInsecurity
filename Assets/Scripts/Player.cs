@@ -9,8 +9,9 @@ public class Player : MonoBehaviour {
 
     public Transform playerHead;
     // Movement variables.
-    public float moveSpeed = 1f;
-    public float rotateSpeed = 1f;
+    public float moveSpeed = 200f;
+    public float rotateSpeed = 40f;
+    public float snapRotateAngle = 30;
     public float mouseLookSpeed = 1f;
     public float mouseLookMinPitchAngle = -70;
     public float mouseLookMaxPitchAngle = 70;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour {
     //private float currentHealth;
     private Vector3 previousPosition;
     private float mouseLookYaw, mouseLookPitch;
+    private float debugExertion, debugSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour {
         ProcessMovementInput(true);
     }
 
-    void ProcessMovementInput(bool inFixedUpdate = false)
+    private void ProcessMovementInput(bool inFixedUpdate = false)
     {
         // Should we use normal update time or fixed update time.
         // Fixed update seems smoothing, haven't noticed this before...
@@ -106,7 +108,13 @@ public class Player : MonoBehaviour {
         // Rotation.
         if (XRDevice.isPresent)
         {
-            float rotation = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x * rotateSpeed * deltaTime;
+            float rotation = 0;
+            if(OVRInput.GetDown(OVRInput.Button.SecondaryThumbstickLeft)){
+                rotation = -snapRotateAngle;
+            }
+            if(OVRInput.GetDown(OVRInput.Button.SecondaryThumbstickRight)){
+                rotation = snapRotateAngle;
+            }
             transform.RotateAround(Camera.main.transform.position, Vector3.up, rotation);
         }
         else
@@ -174,32 +182,29 @@ public class Player : MonoBehaviour {
         normalizedEnergy = Mathf.Clamp01(normalizedEnergy);
     }
 
-    public void CenterColliderOnPlayerHead(){
+    private void CenterColliderOnPlayerHead(){
         Vector3 playerXZ = new Vector3(playerHead.localPosition.x, 0, playerHead.localPosition.z);
         Vector3 colliderXZ = new Vector3(charCtrl.center.x, 0, charCtrl.center.z);
-        if((colliderXZ - playerXZ).magnitude > 0.1f){
+        if((colliderXZ - playerXZ).magnitude > 0.1f && IsMoveStickPressed()){
             charCtrl.center = new Vector3(playerHead.localPosition.x, charCtrl.center.y, playerHead.localPosition.z);
         }
     }
 
-    public float GetNormalizedExertion(){
+    private float GetNormalizedExertion(){
         float distanceMoved = (playerHead.position - previousPosition).magnitude;
         // Ignore any jumps.
         if(distanceMoved > 0.5f){
             distanceMoved = 0;
         }
         float playerSpeed = distanceMoved / Time.deltaTime;
+        debugSpeed = playerSpeed;
         float movementExertion = Mathf.Clamp01(playerSpeed / exertionMaxSpeed);
 
-        if (Time.frameCount % 60 == 0)
-        {
-            Debug.Log("Exertion: " + movementExertion);
-        }
-
+        debugExertion = movementExertion;
         return movementExertion;        
     }
 
-    public void UpdateEnegery(){
+    private void UpdateEnegery(){
         float exertion = GetNormalizedExertion();
         float depletion = exertion * energyDepletionSpeed * Time.deltaTime;
         float regen = (1 - exertion) * energyRegenSpeed * Time.deltaTime;
@@ -218,17 +223,26 @@ public class Player : MonoBehaviour {
         normalizedEnergy = Mathf.Clamp01(normalizedEnergy);
     }
 
-    public void UpdateBlur(){
+    private void UpdateBlur(){
         if (normalizedEnergy < blurEnergyStart)
         {
+            //blur.enabled = true;
             float blurSize = (1 - normalizedEnergy / blurEnergyStart) * maxBlur;
             blur.blurSize = blurSize;
             blur.blurIterations = 2;
         }
         else
         {
+            //blur.enabled = false;
             blur.blurSize = 0;
             blur.blurIterations = 1;
         }
+    }
+
+    private bool IsMoveStickPressed(){
+        if(XRDevice.isPresent && OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).magnitude > 0.1){
+            return true;
+        }
+        return false;
     }
 }

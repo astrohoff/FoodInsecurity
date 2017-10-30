@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638268786165932}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.12, y: 0, z: 4.1}
+  m_LocalPosition: {x: 4.274986, y: 0.034799986, z: 0.47091985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4538483299435086}
@@ -258,7 +258,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1064335634891606}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -292,7 +292,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1874070703205888}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -356,19 +356,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHead: {fileID: 0}
-  moveSpeed: 100
+  moveSpeed: 200
   rotateSpeed: 40
+  snapRotateAngle: 45
   mouseLookSpeed: 500
   mouseLookMinPitchAngle: -70
   mouseLookMaxPitchAngle: 70
-  normalizedEnergy: 1
-  exertionMaxSpeed: 1.5
-  energyDepletionSpeed: 0.1
-  energyRegenSpeed: 0.02
-  maxRegenEnergy: 0.75
+  normalizedEnergy: 0.6
+  exertionMaxSpeed: 2
+  energyDepletionSpeed: 0.04
+  energyRegenSpeed: 0.008
+  maxRegenEnergy: 0.6
   maxHealth: 10
   healthBar: {fileID: 114474119526740558}
   colliderAlignmentThresh: 0.1
+  blur: {fileID: 0}
+  blurEnergyStart: 0.4
+  maxBlur: 5
 --- !u!114 &114674736943221264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,6 +405,6 @@ CharacterController:
   m_Radius: 0.125
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.02
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
