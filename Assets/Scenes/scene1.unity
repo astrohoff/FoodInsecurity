@@ -243,6 +243,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 114598499894080770, guid: 82b5be00c708d6945bf86964680ca6d4,
+        type: 2}
+      propertyPath: maxRegenEnergy
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598499894080770, guid: 82b5be00c708d6945bf86964680ca6d4,
+        type: 2}
+      propertyPath: blurEnergyStart
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82b5be00c708d6945bf86964680ca6d4, type: 2}
   m_IsPrefabParent: 0
