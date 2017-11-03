@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 143780385525660598}
   - component: {fileID: 114598499894080770}
   - component: {fileID: 114674736943221264}
+  - component: {fileID: 114093344544241782}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -332,6 +333,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064335634891606}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114093344544241782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638268786165932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13befec848d420b4a87c9047a85f33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatarPrefab: {fileID: 158226, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 2}
 --- !u!114 &114474119526740558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,10 +375,10 @@ MonoBehaviour:
   mouseLookSpeed: 500
   mouseLookMinPitchAngle: -70
   mouseLookMaxPitchAngle: 70
-  normalizedEnergy: 0.6
+  normalizedEnergy: 0.8
   exertionMaxSpeed: 2
-  energyDepletionSpeed: 0.04
-  energyRegenSpeed: 0.008
+  energyDepletionSpeed: 0.05
+  energyRegenSpeed: 0.01
   maxRegenEnergy: 0.6
   maxHealth: 10
   healthBar: {fileID: 114474119526740558}

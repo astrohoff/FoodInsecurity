@@ -185,7 +185,7 @@ public class Player : MonoBehaviour {
     private void CenterColliderOnPlayerHead(){
         Vector3 playerXZ = new Vector3(playerHead.localPosition.x, 0, playerHead.localPosition.z);
         Vector3 colliderXZ = new Vector3(charCtrl.center.x, 0, charCtrl.center.z);
-        if((colliderXZ - playerXZ).magnitude > 0.1f && IsMoveStickPressed()){
+        if((colliderXZ - playerXZ).magnitude > 0.1f){ //&& IsMoveStickPressed()){
             charCtrl.center = new Vector3(playerHead.localPosition.x, charCtrl.center.y, playerHead.localPosition.z);
         }
     }
