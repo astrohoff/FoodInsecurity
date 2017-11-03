@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - vending
+  - amount
+  - hud
+  - message
   layers:
   - Default
   - TransparentFX
