@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4000013026240068}
   - component: {fileID: 33000012945728192}
   - component: {fileID: 23000011792957002}
+  - component: {fileID: 65981644071772958}
   m_Layer: 0
   m_Name: Sink.2
   m_TagString: Untagged
@@ -34,8 +35,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010842773494}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.113, y: 0.56, z: 9.899}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 27.217022, y: 10.513756, z: 24.173025}
   m_LocalScale: {x: 80, y: 100, z: 115}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010842773494}
   m_Mesh: {fileID: 4300000, guid: 634189559968b644a99dac5af20b2718, type: 3}
+--- !u!65 &65981644071772958
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010842773494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.032320715, y: 0.030045023, z: 0.022737931}
+  m_Center: {x: 0.000000029802322, y: 0, z: 0}

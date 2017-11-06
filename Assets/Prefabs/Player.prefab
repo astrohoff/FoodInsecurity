@@ -70,7 +70,6 @@ GameObject:
   - component: {fileID: 114598499894080770}
   - component: {fileID: 114674736943221264}
   - component: {fileID: 114093344544241782}
-  - component: {fileID: 114685889767180818}
   - component: {fileID: 114392957712275582}
   m_Layer: 0
   m_Name: Player
@@ -417,18 +416,6 @@ MonoBehaviour:
   vrSpawnPosition: {fileID: 4443362840307282}
   nonVrSpawnPosition: {fileID: 4538483299435086}
   healthBar: {fileID: 4974947563084632}
---- !u!114 &114685889767180818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1638268786165932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13befec848d420b4a87c9047a85f33c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatarPrefab: {fileID: 158226, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 2}
 --- !u!143 &143780385525660598
 CharacterController:
   m_ObjectHideFlags: 1

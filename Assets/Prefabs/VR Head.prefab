@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 81844729831448560}
   - component: {fileID: 20033639804314024}
   - component: {fileID: 114818658475301100}
+  - component: {fileID: 114342733949060256}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -420,13 +421,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usePerEyeCameras: 0
   useFixedUpdateForTracking: 0
---- !u!114 &114818658475301100
+--- !u!114 &114342733949060256
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662609966950266}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbea1f823b17354c97fe9caf468e623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1.5
+  weight: 1
+--- !u!114 &114818658475301100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662609966950266}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fc6bde01469c7b4badee5362f191d96, type: 3}
   m_Name: 
