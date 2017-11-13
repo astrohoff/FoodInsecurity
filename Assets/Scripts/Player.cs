@@ -7,6 +7,7 @@ using UnityStandardAssets.ImageEffects;
 public class Player : MonoBehaviour {
     private const float VrFramerate = 90;
 
+    public bool disableColliderRecentering = true;
     public Transform playerHead;
     // Movement variables.
     public float moveSpeed = 200f;
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour {
 	void Update () {
         //ApplyMovementCost();
         UpdateEnegery();
-        if (XRDevice.isPresent)
+        if (XRDevice.isPresent && !disableColliderRecentering)
         {
             CenterColliderOnPlayerHead();
         }
