@@ -13,7 +13,7 @@ public class VendingMachineButton : MonoBehaviour {
     private Vector3 maxPos;
     private bool pressRegistered = false;
     private List<Collider> pressingColliders;
-    
+    private int framesSinceLastPress = 100;
 
 	void Start () {
         pressingColliders = new List<Collider>();
@@ -21,6 +21,11 @@ public class VendingMachineButton : MonoBehaviour {
         initPos = transform.position;
         maxPos = Vector3.zero;
 	}
+
+    void Update()
+    {
+        framesSinceLastPress++;
+    }
 	
 	void FixedUpdate () {
         float distanceFromIdle = (rb.position - initPos).magnitude;
@@ -62,13 +67,14 @@ public class VendingMachineButton : MonoBehaviour {
 
     private void OnPressed()
     {
-        Debug.Log(name + " pressed");
-        GameObject food = Instantiate(foodPrefab);
-        food.transform.position = spawnAnchor.position;
-        Rigidbody foodRb = food.GetComponent<Rigidbody>();
-        if(foodRb != null)
+        if(framesSinceLastPress > 60)
         {
-            foodRb.useGravity = false;
+            Debug.Log(name + " pressed (" + framesSinceLastPress + " frames since last)");
+            GameObject food = Instantiate(foodPrefab);
+            food.transform.position = spawnAnchor.position;
+            food.GetComponent<Food>().SetMode(Food.FoodMode.Edible);
+            framesSinceLastPress = 0;
         }
+        
     }
 }

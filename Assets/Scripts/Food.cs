@@ -7,12 +7,13 @@ public class Food : MonoBehaviour {
     public Color pointHighlight, pressHighlight, selectedHighlight;
 
     private Material foodMat;
-    private int framesWithoutPoint = 0;
+    private int framesWithoutPoint = 2;
     private SelectState selectState = SelectState.None;
     private SelectState previousSelectState = SelectState.None;
     //private OVRInput.RawButton ovrClickedButton = OVRInput.RawButton.None;
 
-    private enum SelectState { None, Point, Press, Selected};
+    private enum SelectState { None, Point, Press, Selected, Deselected};
+    public enum FoodMode { Throwable, Edible };
 
     void Start()
     {
@@ -35,10 +36,23 @@ public class Food : MonoBehaviour {
             {
                 selectState = SelectState.Press;
             }
+            else if (selectState == SelectState.Selected && GetClickDown())
+            {
+                selectState = SelectState.Deselected;
+            }
+            else if(selectState == SelectState.Deselected && GetClickUp())
+            {
+                selectState = SelectState.Point;
+            }
+
+            framesWithoutPoint++;
         }
         else
         {
-            selectState = SelectState.None;
+            if(selectState != SelectState.Selected)
+            {
+                selectState = SelectState.None;
+            }            
         }
         
 
@@ -47,7 +61,6 @@ public class Food : MonoBehaviour {
             UpdateStateAppearence();
             previousSelectState = selectState;
         }
-        framesWithoutPoint++;
     }
 
     private void UpdateStateAppearence()
@@ -56,7 +69,7 @@ public class Food : MonoBehaviour {
         {
             foodMat.SetColor("_EmissionColor", selectedHighlight);
         }
-        else if (selectState == SelectState.Point)
+        else if (selectState == SelectState.Point || selectState == SelectState.Deselected)
         {
             foodMat.SetColor("_EmissionColor", pointHighlight);
         }
@@ -66,15 +79,11 @@ public class Food : MonoBehaviour {
         }
         else
         {
-            if(selectState != SelectState.Selected)
-            {
-                selectState = SelectState.None;
-            }
+            foodMat.SetColor("_EmissionColor", Color.black);
         }
     }
 
     void OnTriggerEnter(Collider c){
-        Debug.Log("Triggered");
         if(c.gameObject.tag == "Player"){
             c.gameObject.GetComponent<Player>().ChangeHealth(health);
             Destroy(gameObject);
@@ -106,4 +115,19 @@ public class Food : MonoBehaviour {
         return OVRInput.GetUp(OVRInput.RawButton.A | OVRInput.RawButton.X);
     }
 
+    public void SetMode(FoodMode mode)
+    {
+        if(mode == FoodMode.Throwable)
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<Collider>().isTrigger = false;
+            GetComponent<Rigidbody>().useGravity = true;
+
+        }
+        else if(mode == FoodMode.Edible)
+        {
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Collider>().isTrigger = true;
+        }
+    }
 }

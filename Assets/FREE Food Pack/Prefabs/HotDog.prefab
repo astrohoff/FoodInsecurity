@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4000012361340800}
   - component: {fileID: 33000011170849486}
   - component: {fileID: 23000011027012488}
+  - component: {fileID: 65648302169208390}
+  - component: {fileID: 54239803533649476}
+  - component: {fileID: 114483121192233758}
   m_Layer: 0
   m_Name: HotDog
   m_TagString: Untagged
@@ -82,3 +85,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013939694586}
   m_Mesh: {fileID: 4300000, guid: 262d1a6f513ed5b4fb329e79b124e2cf, type: 3}
+--- !u!54 &54239803533649476
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013939694586}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65648302169208390
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013939694586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21060333, y: 0.06671445, z: 0.08282581}
+  m_Center: {x: -0.0000001527369, y: -0.0000000055879354, z: -0.000000018626451}
+--- !u!114 &114483121192233758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013939694586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3b8c9aa838bcc4b961deffd098f2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  pointHighlight: {r: 0, g: 0, b: 0, a: 0}
+  pressHighlight: {r: 0, g: 0, b: 0, a: 0}
+  selectedHighlight: {r: 0, g: 0, b: 0, a: 0}

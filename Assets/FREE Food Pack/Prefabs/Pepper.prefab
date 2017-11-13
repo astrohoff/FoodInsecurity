@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4000013765544898}
   - component: {fileID: 33000010125738130}
   - component: {fileID: 23000011745305564}
+  - component: {fileID: 65068525922892714}
+  - component: {fileID: 54300499132372652}
+  - component: {fileID: 114170011413027496}
   m_Layer: 0
   m_Name: Pepper
   m_TagString: Untagged
@@ -82,3 +85,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013741648814}
   m_Mesh: {fileID: 4300002, guid: 6683a92d5ef9b8449a238c88b8f49b2d, type: 3}
+--- !u!54 &54300499132372652
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013741648814}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65068525922892714
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013741648814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03968811, y: 0.16492105, z: 0.03032379}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114170011413027496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013741648814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3b8c9aa838bcc4b961deffd098f2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  pointHighlight: {r: 0, g: 0, b: 0, a: 0}
+  pressHighlight: {r: 0, g: 0, b: 0, a: 0}
+  selectedHighlight: {r: 0, g: 0, b: 0, a: 0}
