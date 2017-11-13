@@ -5,12 +5,15 @@ using UnityEngine;
 public class VendingMachineButton : MonoBehaviour {
 
     public float pressDistance = 0.02f;
+    public GameObject foodPrefab;
+    public Transform spawnAnchor;
 
     private Rigidbody rb;
     private Vector3 initPos;
     private Vector3 maxPos;
     private bool pressRegistered = false;
     private List<Collider> pressingColliders;
+    
 
 	void Start () {
         pressingColliders = new List<Collider>();
@@ -60,5 +63,12 @@ public class VendingMachineButton : MonoBehaviour {
     private void OnPressed()
     {
         Debug.Log(name + " pressed");
+        GameObject food = Instantiate(foodPrefab);
+        food.transform.position = spawnAnchor.position;
+        Rigidbody foodRb = food.GetComponent<Rigidbody>();
+        if(foodRb != null)
+        {
+            foodRb.useGravity = false;
+        }
     }
 }

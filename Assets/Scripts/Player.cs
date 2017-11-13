@@ -50,6 +50,10 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick | OVRInput.Button.SecondaryThumbstick))
+        {
+            InputTracking.Recenter();
+        }
         //ApplyMovementCost();
         UpdateEnegery();
         if (XRDevice.isPresent && !disableColliderRecentering)
