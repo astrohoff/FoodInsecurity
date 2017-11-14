@@ -5,7 +5,6 @@ using UnityEngine.XR;
 
 // Miscellaneous player things.
 public class PlayerMiscellaneous : MonoBehaviour {
-
 	void Awake () {
         if (XRDevice.isPresent)
         {

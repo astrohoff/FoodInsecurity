@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour {
+public class EnergyBar : MonoBehaviour {
     public Transform remainingHealthOrigin;
     public void SetNormalizedHealth(float health){
         Vector3 newRemainingHealthScale = remainingHealthOrigin.localScale;

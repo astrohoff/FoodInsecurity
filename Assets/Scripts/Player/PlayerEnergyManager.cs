@@ -3,27 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerEnergyManager : MonoBehaviour {
-    // Healthbar script attached to the player.
-    public HealthBar healthBar;
-
+    // Player energy bar.
+    public EnergyBar energyBar;
+    // Amount of energy player starts with.
     public float initialEnergy = 7;
+    // Maximum amount of engergy the player can have.
     public float maxEnergy = 10;
+    // Speed that enegery is lost in energy-units per exertion-unit per second.
+    // E.g. if exertion is 1, depletion speed will be 0.5 energy-units per second.
     public float depletionSpeed = 0.5f;
     public float regenSpeed = 0.2f;
     public float maxRegenLevel = 6;
+    public List<EnergyConsumer> energyConsumers;
 
-    private Vector3 previousPosition;
-    private List<IEnergyConsumer> energyConsumers;
     private float currentEnergy;
 
-    void Awake()
-    {
-        energyConsumers = new List<IEnergyConsumer>();
-    }
 
     void Start()
     {
-        previousPosition = Camera.main.transform.position;
         currentEnergy = initialEnergy;
     }
 
@@ -36,13 +33,8 @@ public class PlayerEnergyManager : MonoBehaviour {
             currentEnergy += (1 - exertion) * regenSpeed * Time.deltaTime;
         }
 
-        healthBar.SetNormalizedHealth(currentEnergy / maxEnergy);
+        energyBar.SetNormalizedHealth(currentEnergy / maxEnergy);
 
-    }
-
-    public void RegisterEnergyConsumer(IEnergyConsumer energyConsumer)
-    {
-        energyConsumers.Add(energyConsumer);
     }
 
     private float GetTotalExertion()
@@ -52,12 +44,10 @@ public class PlayerEnergyManager : MonoBehaviour {
             return 0;
         }
         float totalExertion = 0;
-        float totalWeight = 0;
         for(int i = 0; i < energyConsumers.Count; i++)
         {
-            totalExertion += energyConsumers[i].GetCurrentExertion() * energyConsumers[i].GetWeight();
-            totalWeight += energyConsumers[i].GetWeight();
+            totalExertion += energyConsumers[i].currentEnergyConsumption;
         }
-        return totalExertion / totalWeight;
+        return totalExertion;
     }
 }

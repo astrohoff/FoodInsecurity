@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
     public float energyRegenSpeed = 0.06f;
     public float maxRegenEnergy = 0.5f;
     public float maxHealth = 10f;
-    public HealthBar healthBar;
+    public EnergyBar healthBar;
     // Movement cost in health points per meter.
     //public float movementCost = 0.5f;
     // Distance that the player collider must be from the player head before it recenters itself (for VR).
