@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3b8c9aa838bcc4b961deffd098f2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 1
   pointHighlight: {r: 0, g: 0, b: 0, a: 0}
   pressHighlight: {r: 0, g: 0, b: 0, a: 0}
   selectedHighlight: {r: 0, g: 0, b: 0, a: 0}
