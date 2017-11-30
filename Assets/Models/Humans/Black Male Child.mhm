@@ -1,0 +1,31 @@
+# Written by MakeHuman 1.1.1
+version v1.1.1
+tags Black Male Child
+camera 4.5 0.5 -0.23880858715 0.799948794026 0.215492303308 1.6625
+modifier macrodetails-universal/Muscle 0.500000
+modifier macrodetails/African 1.000000
+modifier macrodetails-proportions/BodyProportions 0.500000
+modifier macrodetails/Gender 1.000000
+modifier macrodetails-height/Height 0.500000
+modifier breast/BreastSize 0.500000
+modifier macrodetails/Age 0.313000
+modifier breast/BreastFirmness 0.500000
+modifier macrodetails/Asian 0.000000
+modifier head/head-fat-decr|incr -0.098000
+modifier macrodetails/Caucasian 0.000000
+modifier macrodetails-universal/Weight 0.500000
+teeth Teeth_Base 0a5ec82a-0d5f-43ce-a765-8f076f95692d
+hair afro01 59627022-32e9-4126-9cf1-036d4b9335fc
+eyelashes Eyelashes01 d533836f-13ad-4836-8b65-051108253cd2
+skeleton unity.mhskel
+eyebrows eyebrow002 a4e73c2f-3a12-47c8-b706-31a68cac6907
+eyes Low-Poly 1cc97a30-85a1-42e6-a9f7-b3e753732baa
+pose tpose.bvh
+clothes shoes05 8ef14ff4-8547-419c-a495-17bab919568b
+clothes male_casualsuit03 39864dca-8d5c-4d7c-84ce-c00982e93cb7
+clothesHideFaces True
+expression smile01.mhpose
+skinMaterial skins/young_african_male/young_african_male.mhmat
+material afro01 59627022-32e9-4126-9cf1-036d4b9335fc afro01.mhmat
+material Low-Poly 1cc97a30-85a1-42e6-a9f7-b3e753732baa eyes/materials/brownlight.mhmat
+subdivide False

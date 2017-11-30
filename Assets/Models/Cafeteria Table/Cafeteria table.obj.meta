@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: b93859b6afb5f4e41b4aad31063e28d5
+timeCreated: 1512040217
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mesh10_Group2_School_cafeteria_Bench1_Model
+    100004: Mesh11_Group4_School_cafeteria_Bench1_Model
+    100006: Mesh12_Group4_School_cafeteria_Bench1_Model
+    100008: Mesh13_Group4_School_cafeteria_Bench1_Model
+    100010: Mesh14_Group5_School_cafeteria_Bench1_Model
+    100012: Mesh15_Group5_School_cafeteria_Bench1_Model
+    100014: Mesh16_Group5_School_cafeteria_Bench1_Model
+    100016: Mesh17_Group5_School_cafeteria_Bench1_Model
+    100018: Mesh18_Group5_School_cafeteria_Bench1_Model
+    100020: Mesh19_Group5_School_cafeteria_Bench1_Model
+    100022: Mesh1_Group1_School_cafeteria_Bench1_Model
+    100024: Mesh20_Group6_School_cafeteria_Bench1_Model
+    100026: Mesh21_Group6_School_cafeteria_Bench1_Model
+    100028: Mesh22_Group6_School_cafeteria_Bench1_Model
+    100030: Mesh23_Group6_School_cafeteria_Bench1_Model
+    100032: Mesh24_Group6_School_cafeteria_Bench1_Model
+    100034: Mesh25_Group6_School_cafeteria_Bench1_Model
+    100036: Mesh26_Group7_School_cafeteria_Bench1_Model
+    100038: Mesh27_Group7_School_cafeteria_Bench1_Model
+    100040: Mesh28_Group7_School_cafeteria_Bench1_Model
+    100042: Mesh29_Group7_School_cafeteria_Bench1_Model
+    100044: Mesh2_Group1_School_cafeteria_Bench1_Model
+    100046: Mesh30_Group7_School_cafeteria_Bench1_Model
+    100048: Mesh31_Group7_School_cafeteria_Bench1_Model
+    100050: Mesh32_School_cafeteria_Bench1_Model
+    100052: Mesh33_School_cafeteria_Bench1_Model
+    100054: Mesh34_School_cafeteria_Bench1_Model
+    100056: Mesh35_School_cafeteria_Bench1_Model
+    100058: Mesh36_School_cafeteria_Bench1_Model
+    100060: Mesh37_School_cafeteria_Bench1_Model
+    100062: Mesh38_School_cafeteria_Bench1_Model
+    100064: Mesh3_Group1_School_cafeteria_Bench1_Model
+    100066: Mesh4_Group1_School_cafeteria_Bench1_Model
+    100068: Mesh5_Group1_School_cafeteria_Bench1_Model
+    100070: Mesh6_Group1_School_cafeteria_Bench1_Model
+    100072: Mesh7_Group3_Group2_School_cafeteria_Bench1_Model
+    100074: Mesh8_Group2_School_cafeteria_Bench1_Model
+    100076: Mesh9_Group2_School_cafeteria_Bench1_Model
+    400000: //RootNode
+    400002: Mesh10_Group2_School_cafeteria_Bench1_Model
+    400004: Mesh11_Group4_School_cafeteria_Bench1_Model
+    400006: Mesh12_Group4_School_cafeteria_Bench1_Model
+    400008: Mesh13_Group4_School_cafeteria_Bench1_Model
+    400010: Mesh14_Group5_School_cafeteria_Bench1_Model
+    400012: Mesh15_Group5_School_cafeteria_Bench1_Model
+    400014: Mesh16_Group5_School_cafeteria_Bench1_Model
+    400016: Mesh17_Group5_School_cafeteria_Bench1_Model
+    400018: Mesh18_Group5_School_cafeteria_Bench1_Model
+    400020: Mesh19_Group5_School_cafeteria_Bench1_Model
+    400022: Mesh1_Group1_School_cafeteria_Bench1_Model
+    400024: Mesh20_Group6_School_cafeteria_Bench1_Model
+    400026: Mesh21_Group6_School_cafeteria_Bench1_Model
+    400028: Mesh22_Group6_School_cafeteria_Bench1_Model
+    400030: Mesh23_Group6_School_cafeteria_Bench1_Model
+    400032: Mesh24_Group6_School_cafeteria_Bench1_Model
+    400034: Mesh25_Group6_School_cafeteria_Bench1_Model
+    400036: Mesh26_Group7_School_cafeteria_Bench1_Model
+    400038: Mesh27_Group7_School_cafeteria_Bench1_Model
+    400040: Mesh28_Group7_School_cafeteria_Bench1_Model
+    400042: Mesh29_Group7_School_cafeteria_Bench1_Model
+    400044: Mesh2_Group1_School_cafeteria_Bench1_Model
+    400046: Mesh30_Group7_School_cafeteria_Bench1_Model
+    400048: Mesh31_Group7_School_cafeteria_Bench1_Model
+    400050: Mesh32_School_cafeteria_Bench1_Model
+    400052: Mesh33_School_cafeteria_Bench1_Model
+    400054: Mesh34_School_cafeteria_Bench1_Model
+    400056: Mesh35_School_cafeteria_Bench1_Model
+    400058: Mesh36_School_cafeteria_Bench1_Model
+    400060: Mesh37_School_cafeteria_Bench1_Model
+    400062: Mesh38_School_cafeteria_Bench1_Model
+    400064: Mesh3_Group1_School_cafeteria_Bench1_Model
+    400066: Mesh4_Group1_School_cafeteria_Bench1_Model
+    400068: Mesh5_Group1_School_cafeteria_Bench1_Model
+    400070: Mesh6_Group1_School_cafeteria_Bench1_Model
+    400072: Mesh7_Group3_Group2_School_cafeteria_Bench1_Model
+    400074: Mesh8_Group2_School_cafeteria_Bench1_Model
+    400076: Mesh9_Group2_School_cafeteria_Bench1_Model
+    2300000: Mesh10_Group2_School_cafeteria_Bench1_Model
+    2300002: Mesh11_Group4_School_cafeteria_Bench1_Model
+    2300004: Mesh12_Group4_School_cafeteria_Bench1_Model
+    2300006: Mesh13_Group4_School_cafeteria_Bench1_Model
+    2300008: Mesh14_Group5_School_cafeteria_Bench1_Model
+    2300010: Mesh15_Group5_School_cafeteria_Bench1_Model
+    2300012: Mesh16_Group5_School_cafeteria_Bench1_Model
+    2300014: Mesh17_Group5_School_cafeteria_Bench1_Model
+    2300016: Mesh18_Group5_School_cafeteria_Bench1_Model
+    2300018: Mesh19_Group5_School_cafeteria_Bench1_Model
+    2300020: Mesh1_Group1_School_cafeteria_Bench1_Model
+    2300022: Mesh20_Group6_School_cafeteria_Bench1_Model
+    2300024: Mesh21_Group6_School_cafeteria_Bench1_Model
+    2300026: Mesh22_Group6_School_cafeteria_Bench1_Model
+    2300028: Mesh23_Group6_School_cafeteria_Bench1_Model
+    2300030: Mesh24_Group6_School_cafeteria_Bench1_Model
+    2300032: Mesh25_Group6_School_cafeteria_Bench1_Model
+    2300034: Mesh26_Group7_School_cafeteria_Bench1_Model
+    2300036: Mesh27_Group7_School_cafeteria_Bench1_Model
+    2300038: Mesh28_Group7_School_cafeteria_Bench1_Model
+    2300040: Mesh29_Group7_School_cafeteria_Bench1_Model
+    2300042: Mesh2_Group1_School_cafeteria_Bench1_Model
+    2300044: Mesh30_Group7_School_cafeteria_Bench1_Model
+    2300046: Mesh31_Group7_School_cafeteria_Bench1_Model
+    2300048: Mesh32_School_cafeteria_Bench1_Model
+    2300050: Mesh33_School_cafeteria_Bench1_Model
+    2300052: Mesh34_School_cafeteria_Bench1_Model
+    2300054: Mesh35_School_cafeteria_Bench1_Model
+    2300056: Mesh36_School_cafeteria_Bench1_Model
+    2300058: Mesh37_School_cafeteria_Bench1_Model
+    2300060: Mesh38_School_cafeteria_Bench1_Model
+    2300062: Mesh3_Group1_School_cafeteria_Bench1_Model
+    2300064: Mesh4_Group1_School_cafeteria_Bench1_Model
+    2300066: Mesh5_Group1_School_cafeteria_Bench1_Model
+    2300068: Mesh6_Group1_School_cafeteria_Bench1_Model
+    2300070: Mesh7_Group3_Group2_School_cafeteria_Bench1_Model
+    2300072: Mesh8_Group2_School_cafeteria_Bench1_Model
+    2300074: Mesh9_Group2_School_cafeteria_Bench1_Model
+    3300000: Mesh10_Group2_School_cafeteria_Bench1_Model
+    3300002: Mesh11_Group4_School_cafeteria_Bench1_Model
+    3300004: Mesh12_Group4_School_cafeteria_Bench1_Model
+    3300006: Mesh13_Group4_School_cafeteria_Bench1_Model
+    3300008: Mesh14_Group5_School_cafeteria_Bench1_Model
+    3300010: Mesh15_Group5_School_cafeteria_Bench1_Model
+    3300012: Mesh16_Group5_School_cafeteria_Bench1_Model
+    3300014: Mesh17_Group5_School_cafeteria_Bench1_Model
+    3300016: Mesh18_Group5_School_cafeteria_Bench1_Model
+    3300018: Mesh19_Group5_School_cafeteria_Bench1_Model
+    3300020: Mesh1_Group1_School_cafeteria_Bench1_Model
+    3300022: Mesh20_Group6_School_cafeteria_Bench1_Model
+    3300024: Mesh21_Group6_School_cafeteria_Bench1_Model
+    3300026: Mesh22_Group6_School_cafeteria_Bench1_Model
+    3300028: Mesh23_Group6_School_cafeteria_Bench1_Model
+    3300030: Mesh24_Group6_School_cafeteria_Bench1_Model
+    3300032: Mesh25_Group6_School_cafeteria_Bench1_Model
+    3300034: Mesh26_Group7_School_cafeteria_Bench1_Model
+    3300036: Mesh27_Group7_School_cafeteria_Bench1_Model
+    3300038: Mesh28_Group7_School_cafeteria_Bench1_Model
+    3300040: Mesh29_Group7_School_cafeteria_Bench1_Model
+    3300042: Mesh2_Group1_School_cafeteria_Bench1_Model
+    3300044: Mesh30_Group7_School_cafeteria_Bench1_Model
+    3300046: Mesh31_Group7_School_cafeteria_Bench1_Model
+    3300048: Mesh32_School_cafeteria_Bench1_Model
+    3300050: Mesh33_School_cafeteria_Bench1_Model
+    3300052: Mesh34_School_cafeteria_Bench1_Model
+    3300054: Mesh35_School_cafeteria_Bench1_Model
+    3300056: Mesh36_School_cafeteria_Bench1_Model
+    3300058: Mesh37_School_cafeteria_Bench1_Model
+    3300060: Mesh38_School_cafeteria_Bench1_Model
+    3300062: Mesh3_Group1_School_cafeteria_Bench1_Model
+    3300064: Mesh4_Group1_School_cafeteria_Bench1_Model
+    3300066: Mesh5_Group1_School_cafeteria_Bench1_Model
+    3300068: Mesh6_Group1_School_cafeteria_Bench1_Model
+    3300070: Mesh7_Group3_Group2_School_cafeteria_Bench1_Model
+    3300072: Mesh8_Group2_School_cafeteria_Bench1_Model
+    3300074: Mesh9_Group2_School_cafeteria_Bench1_Model
+    4300000: Mesh10_Group2_School_cafeteria_Bench1_Model
+    4300002: Mesh11_Group4_School_cafeteria_Bench1_Model
+    4300004: Mesh12_Group4_School_cafeteria_Bench1_Model
+    4300006: Mesh13_Group4_School_cafeteria_Bench1_Model
+    4300008: Mesh14_Group5_School_cafeteria_Bench1_Model
+    4300010: Mesh15_Group5_School_cafeteria_Bench1_Model
+    4300012: Mesh16_Group5_School_cafeteria_Bench1_Model
+    4300014: Mesh17_Group5_School_cafeteria_Bench1_Model
+    4300016: Mesh18_Group5_School_cafeteria_Bench1_Model
+    4300018: Mesh19_Group5_School_cafeteria_Bench1_Model
+    4300020: Mesh1_Group1_School_cafeteria_Bench1_Model
+    4300022: Mesh20_Group6_School_cafeteria_Bench1_Model
+    4300024: Mesh21_Group6_School_cafeteria_Bench1_Model
+    4300026: Mesh22_Group6_School_cafeteria_Bench1_Model
+    4300028: Mesh23_Group6_School_cafeteria_Bench1_Model
+    4300030: Mesh24_Group6_School_cafeteria_Bench1_Model
+    4300032: Mesh25_Group6_School_cafeteria_Bench1_Model
+    4300034: Mesh26_Group7_School_cafeteria_Bench1_Model
+    4300036: Mesh27_Group7_School_cafeteria_Bench1_Model
+    4300038: Mesh28_Group7_School_cafeteria_Bench1_Model
+    4300040: Mesh29_Group7_School_cafeteria_Bench1_Model
+    4300042: Mesh2_Group1_School_cafeteria_Bench1_Model
+    4300044: Mesh30_Group7_School_cafeteria_Bench1_Model
+    4300046: Mesh31_Group7_School_cafeteria_Bench1_Model
+    4300048: Mesh32_School_cafeteria_Bench1_Model
+    4300050: Mesh33_School_cafeteria_Bench1_Model
+    4300052: Mesh34_School_cafeteria_Bench1_Model
+    4300054: Mesh35_School_cafeteria_Bench1_Model
+    4300056: Mesh36_School_cafeteria_Bench1_Model
+    4300058: Mesh37_School_cafeteria_Bench1_Model
+    4300060: Mesh38_School_cafeteria_Bench1_Model
+    4300062: Mesh3_Group1_School_cafeteria_Bench1_Model
+    4300064: Mesh4_Group1_School_cafeteria_Bench1_Model
+    4300066: Mesh5_Group1_School_cafeteria_Bench1_Model
+    4300068: Mesh6_Group1_School_cafeteria_Bench1_Model
+    4300070: Mesh7_Group3_Group2_School_cafeteria_Bench1_Model
+    4300072: Mesh8_Group2_School_cafeteria_Bench1_Model
+    4300074: Mesh9_Group2_School_cafeteria_Bench1_Model
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh10_Group2_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 17ded98100c8a55489e6c55e906adb04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh11_Group4_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 10fb811dc6347884cb4020ea40c92f27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh12_Group4_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: b021f59cb6c18ca4bbf61b87ecdfccfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh13_Group4_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: fcf453871811f16449436bd52c7dac2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh14_Group5_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 6fa36cb542ca0c6419022f90b8139459, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh15_Group5_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 9283ba34d5e325d458469b39ea339996, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh16_Group5_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: d4cde28864e2d8d458e076cebdfbf699, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh17_Group5_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 0e090b31796848544863dce7dec7e2b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh18_Group5_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 7f1f3b5943baeec4893099fb4cfc5ef0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh19_Group5_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 219762323cb52524f98b322b0e960626, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh1_Group1_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 2680b2771f6dd3643a44598325dce210, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh20_Group6_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 1a0c91466539f6643a0c7003ec67b7cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh21_Group6_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 83f65cdac6dfbad4788e117215684c9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh22_Group6_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: f36a937b178e7d44293c896ad0876bf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh23_Group6_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 23e95880346fff647aad70a6e2e9d66e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh24_Group6_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 9a69cdc593f48bc41a416929f3dbd788, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh25_Group6_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 5ad75e038bb28b64882d6d4e992bdb8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh26_Group7_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 908207702818e1a459ecf441e34779fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh27_Group7_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: b63daf44b36b6d14fb2e40b0c9f29c41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh28_Group7_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 90828730a7e82084b8adaa3fc10263df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh29_Group7_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 22ae742f841650643bb52b9a8eb55da7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh2_Group1_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 5e7ba612deb941e41be98045d09986ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh30_Group7_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 0d5b4f32e8106c94781cb3fbf14093b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh31_Group7_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 67a3bab3e5138da49b98e87ac27662c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh32_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 42cc2fec4b346c844961d832da5a3d55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh33_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: d7786698447f6394d84054cae56f449a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh34_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 23459de25cf30e840acc060fee355fe1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh35_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 18f631a9d0eaae44e97bec19753bad04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh36_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 2f8cd763ed7988649aefb24966e775d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh37_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 5dfd50566ac1a124d80160c1856449cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh38_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 5b01edfbc67fa52459a1e449aaebb181, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh3_Group1_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: a9de8d62fa2bf1c4f9b173dbd67ee858, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh4_Group1_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 71aa85287c058b74fa51390f27ad1064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh5_Group1_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 6bb3dccd5614d1746909308344e54650, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh6_Group1_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 8dc0c15c2b1756d4eacf00345254e1d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh7_Group3_Group2_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: cd76254aa2cbce04a8c04f5c73089852, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh8_Group2_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: 41e51936a4b0b764b8dbde0792ea2d28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh9_Group2_School_cafeteria_Bench1_ModelMat
+    second: {fileID: 2100000, guid: db0f570ad0cc37a4bb7e9e7fb155cfe3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
