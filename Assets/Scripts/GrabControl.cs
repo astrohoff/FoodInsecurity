@@ -16,7 +16,14 @@ public class GrabControl : MonoBehaviour {
             if (grabTarget != null)
             {
                 grabTarget.transform.SetParent(transform);
-                grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Edible);
+                if (grabTarget.GetComponent<Food>() != null)
+                {
+                    grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Edible);
+                }
+                else
+                {
+                    grabTarget.GetComponent<Tray>().SetMode(Tray.FoodMode.Edible);
+                }
             }
         }
         if (isLeftHand && OVRInput.GetUp(OVRInput.RawButton.LHandTrigger) ||
@@ -24,7 +31,15 @@ public class GrabControl : MonoBehaviour {
         {
             if (grabTarget != null)
             {
-                grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Throwable);
+                if(grabTarget.GetComponent<Food>() != null)
+                {
+                    grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Throwable);
+                }
+                else
+                {
+                    grabTarget.GetComponent<Tray>().SetMode(Tray.FoodMode.Throwable);
+                }
+                
                 Vector3 controllerVel = Vector3.zero;
                 if (isLeftHand)
                 {
@@ -46,6 +61,10 @@ public class GrabControl : MonoBehaviour {
     void OnTriggerEnter(Collider collider){
         if(collider.GetComponent<Food>() != null){
             grabTarget = collider.gameObject;
+        }
+        else if(collider.tag == "Tray")
+        {
+            grabTarget = collider.transform.parent.gameObject;
         }
     }
 }
