@@ -47,6 +47,14 @@ public class Tray : MonoBehaviour {
         return false;
     } 
 
+    public void SetFoodPurchased(){
+        for(int i = 0; i < containedFood.Count; i++){
+            if(containedFood[i] != null){
+                containedFood[i].purchased = true;
+            }
+        }
+    }
+
     public float GetContainedFoodCost(){
         float cost = 0;
         for(int i = 0; i < containedFood.Count; i++){

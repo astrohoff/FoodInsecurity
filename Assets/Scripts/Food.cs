@@ -6,6 +6,7 @@ public class Food : MonoBehaviour {
     public float health = 2;
     public float cost = 1f;
     public Color pointHighlight, pressHighlight, selectedHighlight;
+    public bool purchased = false;
 
     private Material foodMat;
     private int framesWithoutPoint = 2;
@@ -85,7 +86,7 @@ public class Food : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider c){
-        if(c.gameObject.tag == "Player"){
+        if(c.gameObject.tag == "Mouth" && purchased){
             c.gameObject.GetComponent<Player>().ChangeHealth(health);
             Destroy(gameObject);
         }
