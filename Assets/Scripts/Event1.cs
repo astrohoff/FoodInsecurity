@@ -10,6 +10,7 @@ public class Event1 : MonoBehaviour {
 	public GameObject blocker2; //im too lazy and tired to figure out how to enable all 3 of them under a gameobject
 	public GameObject blocker3;
 	public GameObject Trigger2;
+    public GameObject[] additionalBlockers;
 
 	void OnTriggerEnter (Collider c)
 	{
@@ -22,6 +23,9 @@ public class Event1 : MonoBehaviour {
 			(blocker1.GetComponent (typeof(Collider)) as Collider).enabled = true;
 			(blocker2.GetComponent (typeof(Collider)) as Collider).enabled = true;
 			(blocker3.GetComponent (typeof(Collider)) as Collider).enabled = true;
+            for(int i = 0; i < additionalBlockers.Length; i++){
+                (additionalBlockers[i].GetComponent (typeof(Collider)) as Collider).enabled = true;
+            }
 			Debug.Log ("Player is now blocked from leaving the line.");
 			Trigger2.SetActive(true);
 			Debug.Log ("Trigger #2 activated.");

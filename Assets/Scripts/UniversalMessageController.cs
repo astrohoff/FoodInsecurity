@@ -31,6 +31,7 @@ public class UniversalMessageController : MonoBehaviour {
 	// Array index of the current message.
 	public int messageIndex = 0;
     public float playerClickRange = 5f;
+    public bool hasBeenShown = false;
 
 	// The initial color of the panel (obtained at startup so we can de-highlight and restore this  
 	// color when the user stops gazing at the message).
@@ -62,11 +63,12 @@ public class UniversalMessageController : MonoBehaviour {
 
 	// Display the message.
 	// This should be used by other scripts to show the message.
-	public void ShowMessage(){
+    public void ShowMessage(int mi = 0){
+        hasBeenShown = true;
 		// Prevent Autowalk
 		//player.enabled = false;
 		// Reset message index.
-		messageIndex = 0;
+        messageIndex = mi;
 		uiTextComponent.text = messages[messageIndex];
 		// Center the message if needed.
 		if(centerOnPlayerOnShow){

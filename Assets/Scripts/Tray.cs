@@ -50,6 +50,7 @@ public class Tray : MonoBehaviour {
     public void SetFoodPurchased(){
         for(int i = 0; i < containedFood.Count; i++){
             if(containedFood[i] != null){
+                
                 containedFood[i].purchased = true;
             }
         }
@@ -58,7 +59,7 @@ public class Tray : MonoBehaviour {
     public float GetContainedFoodCost(){
         float cost = 0;
         for(int i = 0; i < containedFood.Count; i++){
-            if(containedFood[i] != null){
+            if(containedFood[i] != null && containedFood[i].transform.IsChildOf(transform)){
                 cost += containedFood[i].cost;
             }
         }

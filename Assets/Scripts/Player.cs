@@ -5,6 +5,8 @@ using UnityEngine.XR;
 using UnityStandardAssets.ImageEffects;
 
 public class Player : MonoBehaviour {
+
+    public static Player MainPlayer;
     private const float VrFramerate = 90;
 
     public bool disableColliderRecentering = true;
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour {
     public float blurEnergyStart = 0.5f;
     public float maxBlur = 4;
     public bool movementEnabled = true;
+    public Tray tray;
 
     private float nonVrGraphicsFramerate = 60;
     private float nonVRPhysicsFramerate = 60;
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        MainPlayer = this;
         SetTargetFramerates();
         charCtrl = GetComponent<CharacterController>();
         //currentHealth = maxHealth;

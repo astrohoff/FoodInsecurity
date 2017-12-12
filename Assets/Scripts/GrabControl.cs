@@ -20,9 +20,14 @@ public class GrabControl : MonoBehaviour {
                 {
                     grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Edible);
                 }
+                else if(grabTarget.GetComponent<Money>() != null){
+                    grabTarget.GetComponent<Money>().SetMode(Money.PhysicsMode.Grabbed);
+                }
                 else
                 {
-                    grabTarget.GetComponent<Tray>().SetMode(Tray.PhysicsMode.FixedTrigger);
+                    Tray tray = grabTarget.GetComponent<Tray>();
+                    tray.SetMode(Tray.PhysicsMode.FixedTrigger);
+                    GameObject.Find("Player").GetComponent<Player>().tray = tray;
                 }
             }
         }
@@ -38,6 +43,9 @@ public class GrabControl : MonoBehaviour {
                     if(grabTarget.GetComponent<Food>() != null)
                     {
                         grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Throwable);
+                    }
+                    else if(grabTarget.GetComponent<Money>() != null){
+                        grabTarget.GetComponent<Money>().SetMode(Money.PhysicsMode.Throwable);
                     }
                     else
                     {
@@ -63,13 +71,18 @@ public class GrabControl : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider collider){
-        if(collider.GetComponent<Food>() != null){
+        if (collider.GetComponent<Food>() != null)
+        {
             grabTarget = collider.gameObject;
         }
-        else if(collider.tag == "Tray")
+        else if (collider.tag == "Tray")
         {
             grabTarget = collider.transform.parent.gameObject;
         }
+        else if (collider.GetComponent<Money>() != null){
+            grabTarget = collider.gameObject;
+        }
+         
     }
 
     void OnTriggerExit(Collider collider){
