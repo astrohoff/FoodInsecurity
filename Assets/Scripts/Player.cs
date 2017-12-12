@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
     public BlurOptimized blur;
     public float blurEnergyStart = 0.5f;
     public float maxBlur = 4;
+    public bool movementEnabled = true;
 
     private float nonVrGraphicsFramerate = 60;
     private float nonVRPhysicsFramerate = 60;
@@ -89,7 +90,9 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate()
     {
-        ProcessMovementInput(true);
+        if(movementEnabled){
+            ProcessMovementInput(true);
+        }
     }
 
     private void ProcessMovementInput(bool inFixedUpdate = false)
