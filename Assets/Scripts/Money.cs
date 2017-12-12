@@ -5,8 +5,8 @@ using UnityEngine;
 public class Money : MonoBehaviour {
     public float amount = 2f;
     private PhysicsMode mode = PhysicsMode.Floating;
-    public float bobDistance = 0.1f;
-    public float bobSpeed = 0.5f;
+    public float bobDistance = 0.05f;
+    public float bobSpeed = 2f;
 
     private float initY;
 

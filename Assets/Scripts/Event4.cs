@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Event4 : MonoBehaviour {
 
-
 	//public GameObject blocker1;
 	//public GameObject blocker2; //im too lazy and tired to figure out how to enable all 3 of them under a gameobject
 	//public GameObject blocker3;
@@ -36,6 +35,7 @@ public class Event4 : MonoBehaviour {
 	void OnTriggerExit (Collider c)
 	{
 		//Debug.Log ("OBJECT EXITED THE TRIGGER");
+
 	}
 
 

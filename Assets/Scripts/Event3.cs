@@ -21,11 +21,7 @@ public class Event3 : MonoBehaviour {
 
 		}
 	}
-
-	void OnTriggerStay(Collider c)
-	{
-		Debug.Log("User should now be looking for a place to sit.");
-	}
+        
 
 	void OnTriggerExit (Collider c)
 	{
