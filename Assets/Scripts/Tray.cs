@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tray : MonoBehaviour {
-    public enum FoodMode { Throwable, Edible };
+    public enum PhysicsMode { Throwable, FixedTrigger };
 
     void Start()
     {
-        SetMode(FoodMode.Edible);
+        SetMode(PhysicsMode.FixedTrigger);
     }
 
     void OnCollisionEnter(Collision c)
@@ -28,9 +28,9 @@ public class Tray : MonoBehaviour {
         }
     }
 
-    public void SetMode(FoodMode mode)
+    public void SetMode(PhysicsMode mode)
     {
-        if (mode == FoodMode.Throwable)
+        if (mode == PhysicsMode.Throwable)
         {
             GetComponent<Rigidbody>().isKinematic = false;
             for(int i = 0; i < transform.childCount; i++)
@@ -40,7 +40,7 @@ public class Tray : MonoBehaviour {
             GetComponent<Rigidbody>().useGravity = true;
 
         }
-        else if (mode == FoodMode.Edible)
+        else if (mode == PhysicsMode.FixedTrigger)
         {
             GetComponent<Rigidbody>().isKinematic = true;
             for (int i = 0; i < transform.childCount; i++)

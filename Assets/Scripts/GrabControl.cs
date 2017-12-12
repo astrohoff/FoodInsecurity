@@ -22,7 +22,7 @@ public class GrabControl : MonoBehaviour {
                 }
                 else
                 {
-                    grabTarget.GetComponent<Tray>().SetMode(Tray.FoodMode.Edible);
+                    grabTarget.GetComponent<Tray>().SetMode(Tray.PhysicsMode.FixedTrigger);
                 }
             }
         }
@@ -31,29 +31,33 @@ public class GrabControl : MonoBehaviour {
         {
             if (grabTarget != null)
             {
-                if(grabTarget.GetComponent<Food>() != null)
-                {
-                    grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Throwable);
+                if(!grabTarget.transform.IsChildOf(transform)){
+                    grabTarget = null;
                 }
-                else
-                {
-                    grabTarget.GetComponent<Tray>().SetMode(Tray.FoodMode.Throwable);
+                else{
+                    if(grabTarget.GetComponent<Food>() != null)
+                    {
+                        grabTarget.GetComponent<Food>().SetMode(Food.FoodMode.Throwable);
+                    }
+                    else
+                    {
+                        grabTarget.GetComponent<Tray>().SetMode(Tray.PhysicsMode.Throwable);
+                    }
+
+                    Vector3 controllerVel = Vector3.zero;
+                    if (isLeftHand)
+                    {
+                        controllerVel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
+                    }
+                    else
+                    {
+                        controllerVel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
+                    }
+                    controllerVel = trackingSpace.TransformVector(controllerVel);
+                    grabTarget.GetComponent<Rigidbody>().velocity = controllerVel;
+                    grabTarget.transform.SetParent(null);
+                    grabTarget = null;
                 }
-                
-                Vector3 controllerVel = Vector3.zero;
-                if (isLeftHand)
-                {
-                    controllerVel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
-                }
-                else
-                {
-                    controllerVel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
-                }
-                controllerVel = trackingSpace.TransformVector(controllerVel);
-                grabTarget.GetComponent<Rigidbody>().velocity = controllerVel;
-                Debug.Log("Throwing with velocity " + controllerVel.ToString());
-                grabTarget.transform.SetParent(null);
-                grabTarget = null;
             }
         }
     }
