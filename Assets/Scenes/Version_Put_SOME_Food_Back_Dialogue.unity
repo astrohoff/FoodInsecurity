@@ -9491,6 +9491,9 @@ MonoBehaviour:
   - 'Cashier: "I''m sorry, but food isn''t free. It also looks like you aren''t registered
     for reduced or free lunch programs, so I can''t help you."'
   - 'Cashier: "Please return the food items back or you can''t leave the line."'
+  - 'Cashier: "..."'
+  - 'Cashier: "Ok fine, but just this once, at least return some of the food items,
+    and quickly pass the line."'
   showOnStart: 0
   centerOnPlayerOnShow: 0
   loadSceneName: 
@@ -21968,7 +21971,7 @@ MonoBehaviour:
   player: {fileID: 256107400}
   messages:
   - 'Erik: "Hey we saw what happened at the line, did you not get food?"'
-  - 'Rob: "Do you not have money at all?"'
+  - 'Rob: "Hey, at least he has something. Do you not have money at all?"'
   - 'You: "No, I don''t have any money."'
   - 'Rob: "Erik here doesn''t have any money either, but he''s in the Free Lunch Program.
     I''m in it too but I have Reduced Lunch instead."'
