@@ -73,7 +73,7 @@ public class GrabControl : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider collider){
-        if(collider.gameObject == grabTarget){
+        if(grabTarget != null && (collider.gameObject == grabTarget || collider.transform.IsChildOf(grabTarget.transform))){
             if(!grabTarget.transform.IsChildOf(transform)){
                 grabTarget = null;
             }

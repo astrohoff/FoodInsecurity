@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour {
     public float health = 2;
+    public float cost = 1f;
     public Color pointHighlight, pressHighlight, selectedHighlight;
 
     private Material foodMat;

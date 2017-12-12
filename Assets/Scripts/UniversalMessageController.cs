@@ -30,6 +30,7 @@ public class UniversalMessageController : MonoBehaviour {
 	public bool clickEnabled = true;
 	// Array index of the current message.
 	public int messageIndex = 0;
+    public float playerClickRange = 5f;
 
 	// The initial color of the panel (obtained at startup so we can de-highlight and restore this  
 	// color when the user stops gazing at the message).
@@ -49,6 +50,15 @@ public class UniversalMessageController : MonoBehaviour {
 			SetMessageVisibility (false);
 		}
 	}
+
+    void Update(){
+        if((Camera.main.transform.position - transform.position).magnitude <= playerClickRange){
+            if((OVRInput.GetDown(OVRInput.Button.One | OVRInput.Button.Two | OVRInput.Button.Three | OVRInput.Button.Four))
+                || Input.GetMouseButtonDown(0)){
+                OnClick();
+            }
+        }
+    }
 
 	// Display the message.
 	// This should be used by other scripts to show the message.
